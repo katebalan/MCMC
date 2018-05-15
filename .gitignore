@@ -1,4 +1,5 @@
 .idea
 data
 container.dot
-results/experiment1
+tmp
+!tmp/.gitkeep
