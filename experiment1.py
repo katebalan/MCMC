@@ -1,3 +1,4 @@
+# coding:utf8
 import numpy as np
 import pandas as pd
 import pymc
@@ -14,8 +15,10 @@ y0, y1 = years[0], years[-1]
 arr = cnt.values
 plt.plot(years, arr, '-ok')
 plt.xlim(y0, y1)
-plt.xlabel("Year")
-plt.ylabel("Number of storms")
+xLabel = "Рік".decode('utf8')
+yLabel = "Кількість штормів".decode('utf8')
+plt.xlabel(xLabel)
+plt.ylabel(yLabel)
 plt.minorticks_on()
 plt.grid(b=True, which='major', color='black', linestyle='-')
 plt.grid(b=True, which='minor', color='grey', linestyle='--')
