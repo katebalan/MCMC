@@ -1,5 +1,5 @@
 .idea
 data
 container.dot
-tmp
+tmp/*
 !tmp/.gitkeep
