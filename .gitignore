@@ -3,3 +3,5 @@ container.dot
 tmp/*
 venv
 !tmp/.gitkeep
+
+__pycache__
