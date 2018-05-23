@@ -1,7 +1,7 @@
 .idea
 container.dot
-tmp/*
+tmp/*/*
 venv
-!tmp/.gitkeep
+!tmp/*/.gitkeep
 
 __pycache__
