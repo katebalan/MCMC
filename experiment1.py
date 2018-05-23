@@ -19,12 +19,12 @@ if __name__ == '__main__':
     plt.xlim(y0, y1)
 
     # for python 2.7
-    # xLabel = "Рік".decode('utf8')
-    # yLabel = "Кількість штормів".decode('utf8')
+    xLabel = "Рік".decode('utf8')
+    yLabel = "Кількість штормів".decode('utf8')
 
     # for python 3.5
-    xLabel = "Рік"
-    yLabel = "Кількість штормів"
+    # xLabel = "Рік"
+    # yLabel = "Кількість штормів"
 
     plt.xlabel(xLabel)
     plt.ylabel(yLabel)
@@ -60,16 +60,29 @@ if __name__ == '__main__':
 
     plt.subplot(311)
     plt.plot(mcmc.trace('switchpoint')[:])
-    plt.ylabel("Точка перемикання")
+    # for python 2.7
+    plt.ylabel("Точка перемикання".decode('utf8'))
+    # for python 3.5
+    # plt.ylabel("Точка перемикання")
     general.set_grid_to_plot()
     plt.subplot(312)
     plt.plot(mcmc.trace('early_mean')[:])
-    plt.ylabel("Early mean")
+    # for python 2.7
+    plt.ylabel("Early mean".decode('utf8'))
+    # for python 3.5
+    # plt.ylabel("Early mean")
     general.set_grid_to_plot()
     plt.subplot(313)
     plt.plot(mcmc.trace('late_mean')[:])
-    plt.xlabel("Iteration")
-    plt.ylabel("Late mean")
+    # for python 2.7
+    xLabel = "Ітерація".decode('utf8')
+    yLabel = "Late mean".decode('utf8')
+
+    # for python 3.5
+    # xLabel = "Ітерація"
+    # yLabel = "Late mean"
+    plt.xlabel(xLabel)
+    plt.ylabel(yLabel)
     general.set_grid_to_plot()
     plt.savefig(general.folderPath1 + "exp1_markov_chains.png")
     plt.clf()
