@@ -29,7 +29,7 @@ if __name__ == '__main__':
     plt.xlabel(xLabel)
     plt.ylabel(yLabel)
     general.set_grid_to_plot()
-    plt.savefig(general.folderPath + "exp1_storms.png")
+    plt.savefig(general.folderPath1 + "exp1_storms.png")
     plt.clf()
 
     switchpoint = pymc.DiscreteUniform('switchpoint',
@@ -71,7 +71,7 @@ if __name__ == '__main__':
     plt.xlabel("Iteration")
     plt.ylabel("Late mean")
     general.set_grid_to_plot()
-    plt.savefig(general.folderPath + "exp1_markov_chains.png")
+    plt.savefig(general.folderPath1 + "exp1_markov_chains.png")
     plt.clf()
 
     plt.subplot(131)
@@ -87,7 +87,7 @@ if __name__ == '__main__':
     plt.hist(mcmc.trace('late_mean')[:], 15)
     plt.xlabel("Late mean")
     general.set_grid_to_plot()
-    plt.savefig(general.folderPath + "exp1_distribution.png")
+    plt.savefig(general.folderPath1 + "exp1_distribution.png")
     plt.clf()
 
     yp = y0 + mcmc.trace('switchpoint')[:].mean()
@@ -110,8 +110,8 @@ if __name__ == '__main__':
     yLabel = "Кількість штормів"
 
     general.set_grid_to_plot()
-    plt.savefig(general.folderPath + "exp1_rate.png")
+    plt.savefig(general.folderPath1 + "exp1_rate.png")
     plt.clf()
 
     graph = pymc.graph.graph(model)
-    graph.write_png(general.folderPath + "exp1_model.png")
+    graph.write_png(general.folderPath1 + "exp1_model.png")

@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 
-folderPath = "tmp/"
+folderPath1 = "tmp/exp1/"
+folderPath2 = "tmp/exp2/"
 
 
 def set_grid_to_plot():
