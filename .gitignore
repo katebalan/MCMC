@@ -9,3 +9,10 @@ __pycache__
 early_mean.png
 late_mean.png
 switchpoint.png
+
+!results/exp1/early_mean.png
+!results/exp2/early_mean.png
+!results/exp1/late_mean.png
+!results/exp2/late_mean.png
+!results/exp1/switchpoint.png
+!results/exp2/switchpoint.png

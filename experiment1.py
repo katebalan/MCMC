@@ -58,7 +58,7 @@ if __name__ == '__main__':
                         rate, storms])
 
     mcmc = pymc.MCMC(model)
-    mcmc.sample(iter=10000, burn=1000, thin=10)
+    mcmc.sample(iter=20000, burn=1000, thin=10)
 
     plt.subplot(311)
     plt.plot(mcmc.trace('switchpoint')[:])
@@ -154,3 +154,5 @@ if __name__ == '__main__':
 
     graph = pymc.graph.graph(model)
     graph.write_png(general.folderPath1 + "exp1_model.png")
+
+    pymc.Matplot.plot(mcmc)

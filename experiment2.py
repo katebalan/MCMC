@@ -68,7 +68,6 @@ if __name__ == '__main__':
     early_mean_samples = strmsM.trace('early_mean')[:]
     late_mean_samples = strmsM.trace('late_mean')[:]
 
-    print(late_mean_samples)
     figsize(12.5, 8)
     # histogram of the samples:
     fig = plt.figure()
