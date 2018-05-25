@@ -27,7 +27,7 @@ if __name__ == '__main__':
     plt.savefig(general.folderPath2 + "exp2_storms1.png")
     plt.clf()
 
-    plt.plot(stormsYears, stormsNumbers, '-,k')
+    plt.plot(stormsYears, stormsNumbers, '-ok')
     plt.xlim(year0, year1)
     plt.xlabel("Рік")
     plt.ylabel("Кількість штормів")
