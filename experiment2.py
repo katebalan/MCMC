@@ -64,21 +64,6 @@ if __name__ == '__main__':
     strmsM = pm.MCMC(storms_model)
     strmsM.sample(iter=40000, burn=1000, thin=20)
 
-    plt.hist(strmsM.trace('late_mean')[:], edgecolor="k")
-    general.set_grid_to_plot()
-    plt.savefig(general.folderPath2 + "exp2_late_mean.png")
-    plt.clf()
-
-    plt.hist(strmsM.trace('early_mean')[:], edgecolor="k")
-    general.set_grid_to_plot()
-    plt.savefig(general.folderPath2 + "exp2_early_mean.png")
-    plt.clf()
-
-    plt.hist(strmsM.trace('switchpoint')[:], edgecolor="k")
-    general.set_grid_to_plot()
-    plt.savefig(general.folderPath2 + "exp2_switchpoint.png")
-    plt.clf()
-
     switchpoint_samples = strmsM.trace('switchpoint')[:]
     early_mean_samples = strmsM.trace('early_mean')[:]
     late_mean_samples = strmsM.trace('late_mean')[:]
@@ -87,7 +72,7 @@ if __name__ == '__main__':
     figsize(12.5, 8)
     # histogram of the samples:
     fig = plt.figure()
-    fig.subplots_adjust(bottom=-0.05)
+    fig.subplots_adjust(bottom=0.07)
     n_mths = len(stormsNumbers)
     ax = plt.subplot(311)
     ax.set_autoscaley_on(False)
@@ -100,9 +85,8 @@ if __name__ == '__main__':
     plt.title(r"""Posterior distributions of the variables $e, l, s$""",
               fontsize=16)
 
-    plt.xlim([40, 120])
-    plt.ylim([0, 0.6])
-    plt.xlabel("$e$ value", fontsize=14)
+    plt.xlim([2, 12])
+    plt.ylim([0, 1.7])
     ax = plt.subplot(312)
     ax.set_autoscaley_on(False)
     plt.hist(late_mean_samples,
@@ -110,19 +94,20 @@ if __name__ == '__main__':
              color="purple", normed=True)
 
     plt.legend(loc="upper left")
-    plt.xlim([40, 120])
-    plt.ylim([0, 0.6])
-    plt.xlabel("$l$ value", fontsize=14)
+    plt.xlim([2, 12])
+    plt.ylim([0, 1.1])
     plt.subplot(313)
 
     w = 1.0 / switchpoint_samples.shape[0] * np.ones_like(switchpoint_samples)
     plt.hist(switchpoint_samples, bins=range(0, n_mths),
              alpha=1, label=r"posterior of $s$", color="green",
-             weights=w, rwidth=2.)
+             weights=w, rwidth=2., edgecolor="k")
     plt.xlim([20, n_mths - 20])
 
-    plt.xlabel(r"$s$ (in days)", fontsize = 14)
+    plt.xlabel(r"$s$ (in days)", fontsize=14)
     plt.ylabel("probability")
     plt.legend(loc="upper left")
     plt.savefig(general.folderPath2 + "exp2_posterior_distributions.png")
     plt.clf()
+
+    pm.Matplot.plot(strmsM)

@@ -5,3 +5,7 @@ venv
 !tmp/*/.gitkeep
 
 __pycache__
+
+early_mean.png
+late_mean.png
+switchpoint.png
