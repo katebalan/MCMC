@@ -14,6 +14,9 @@ if __name__ == '__main__':
 
     # Basin [' SI' ' NA' ' EP' ' SP' ' WP' ' NI' ' SA']
     data = fixed_df[fixed_df['Basin'] == ' SP'].groupby('Season')['Serial_Num'].nunique()
+    print(fixed_df.head())
+    print(data.head())
+    print(data.tail())
 
     stormsYears = data.index
     stormsNumbers = data.values
@@ -64,6 +67,21 @@ if __name__ == '__main__':
     strmsM = pm.MCMC(storms_model)
     strmsM.sample(iter=40000, burn=1000, thin=20)
 
+    plt.hist(strmsM.trace('late_mean')[:], edgecolor="k")
+    general.set_grid_to_plot()
+    plt.savefig(general.folderPath2 + "exp2_late_mean.png")
+    plt.clf()
+
+    plt.hist(strmsM.trace('early_mean')[:], edgecolor="k")
+    general.set_grid_to_plot()
+    plt.savefig(general.folderPath2 + "exp2_early_mean.png")
+    plt.clf()
+
+    plt.hist(strmsM.trace('switchpoint')[:], edgecolor="k")
+    general.set_grid_to_plot()
+    plt.savefig(general.folderPath2 + "exp2_switchpoint.png")
+    plt.clf()
+
     switchpoint_samples = strmsM.trace('switchpoint')[:]
     early_mean_samples = strmsM.trace('early_mean')[:]
     late_mean_samples = strmsM.trace('late_mean')[:]
@@ -110,3 +128,27 @@ if __name__ == '__main__':
     plt.clf()
 
     pm.Matplot.plot(strmsM)
+    plt.clf()
+
+    yp = year0 + strmsM.trace('switchpoint')[:].mean()
+    em = strmsM.trace('early_mean')[:].mean()
+    lm = strmsM.trace('late_mean')[:].mean()
+    print((yp, em, lm))
+
+    plt.plot(stormsYears, stormsNumbers, '-ok')
+    plt.axvline(yp, color='k', ls='--')
+    plt.plot([year0, yp], [em, em], '-b', lw=3)
+    plt.plot([yp, year1], [lm, lm], '-r', lw=3)
+    plt.xlim(year0, year1)
+
+    # for python 2.7
+    # xLabel = "Рік".decode('utf8')
+    # yLabel = "Кількість штормів".decode('utf8')
+
+    # for python 3.5
+    xLabel = "Рік"
+    yLabel = "Кількість штормів"
+
+    general.set_grid_to_plot()
+    plt.savefig(general.folderPath2 + "exp2_rate.png")
+    plt.clf()

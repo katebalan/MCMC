@@ -1,0 +1,53 @@
+/home/kate/diploma/venv/bin/python /home/kate/diploma/experiment2.py
+      Serial_Num  Season    ...      Pres(WMO) Percentile Track_type
+0  1848011S09080    1848    ...                    -100.0       main
+1  1848011S09080    1848    ...                    -100.0       main
+2  1848011S09080    1848    ...                    -100.0       main
+3  1848011S09080    1848    ...                    -100.0       main
+4  1848011S09080    1848    ...                    -100.0       main
+
+[5 rows x 16 columns]
+Season
+1907    1
+1908    2
+1909    1
+1910    1
+1911    4
+Name: Serial_Num, dtype: int64
+Season
+2013     8
+2014    14
+2015     9
+2016    10
+2017     4
+Name: Serial_Num, dtype: int64
+[-                 5%                  ] 2101 of 40000 complete in 0.5 sec
+[---              10%                  ] 4081 of 40000 complete in 1.0 sec
+[-----            15%                  ] 6072 of 40000 complete in 1.5 sec
+[-------          20%                  ] 8088 of 40000 complete in 2.0 sec
+[---------        25%                  ] 10082 of 40000 complete in 2.5 sec
+[-----------      30%                  ] 12001 of 40000 complete in 3.0 sec
+[-------------    34%                  ] 13933 of 40000 complete in 3.5 sec
+[---------------  39%                  ] 15813 of 40000 complete in 4.0 sec
+[---------------- 44%                  ] 17771 of 40000 complete in 4.5 sec
+[-----------------49%                  ] 19688 of 40000 complete in 5.0 sec
+[-----------------53%                  ] 21591 of 40000 complete in 5.5 sec
+[-----------------58%--                ] 23492 of 40000 complete in 6.0 sec
+[-----------------63%----              ] 25329 of 40000 complete in 6.5 sec
+[-----------------68%-----             ] 27242 of 40000 complete in 7.0 sec
+[-----------------72%-------           ] 28830 of 40000 complete in 7.5 sec
+[-----------------76%--------          ] 30484 of 40000 complete in 8.0 sec
+[-----------------80%----------        ] 32179 of 40000 complete in 8.5 sec
+[-----------------85%------------      ] 34072 of 40000 complete in 9.0 sec
+[-----------------89%--------------    ] 35935 of 40000 complete in 9.5 sec
+[-----------------94%---------------   ] 37703 of 40000 complete in 10.0 sec
+[-----------------98%----------------- ] 39472 of 40000 complete in 10.5 sec
+[-----------------100%-----------------] 40000 of 40000 complete in 10.6 sec
+/home/kate/diploma/venv/lib/python3.5/site-packages/matplotlib/axes/_axes.py:6462: UserWarning: The 'normed' kwarg is deprecated, and has been replaced by the 'density' kwarg.
+  warnings.warn("The 'normed' kwarg is deprecated, and has been "
+Plotting late_mean
+Plotting switchpoint
+Plotting early_mean
+(1956.0841025641025, 3.2686921769203474, 10.16375574266441)
+
+Process finished with exit code 0

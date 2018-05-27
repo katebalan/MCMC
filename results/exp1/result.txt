@@ -1,0 +1,18 @@
+/home/kate/diploma/venv/bin/python /home/kate/diploma/experiment1.py
+[---               9%                  ] 1939 of 20000 complete in 0.5 sec
+[-------          18%                  ] 3795 of 20000 complete in 1.0 sec
+[----------       28%                  ] 5677 of 20000 complete in 1.5 sec
+[--------------   37%                  ] 7480 of 20000 complete in 2.0 sec
+[-----------------46%                  ] 9361 of 20000 complete in 2.5 sec
+[-----------------56%-                 ] 11222 of 20000 complete in 3.0 sec
+[-----------------65%----              ] 13092 of 20000 complete in 3.5 sec
+[-----------------74%--------          ] 14902 of 20000 complete in 4.0 sec
+[-----------------83%-----------       ] 16758 of 20000 complete in 4.5 sec
+[-----------------93%---------------   ] 18631 of 20000 complete in 5.0 sec
+[-----------------100%-----------------] 20000 of 20000 complete in 5.4 sec
+(1931.0552631578948, 7.304247768055585, 14.287796366148147)
+Plotting early_mean
+Plotting switchpoint
+Plotting late_mean
+
+Process finished with exit code 0
