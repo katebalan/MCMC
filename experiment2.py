@@ -152,3 +152,5 @@ if __name__ == '__main__':
     general.set_grid_to_plot()
     plt.savefig(general.folderPath2 + "exp2_rate.png")
     plt.clf()
+
+    pymc.Matplot.plot(mcmc)
