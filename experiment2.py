@@ -86,7 +86,7 @@ if __name__ == '__main__':
     early_mean_samples = strmsM.trace('early_mean')[:]
     late_mean_samples = strmsM.trace('late_mean')[:]
 
-    figsize(12.5, 8)
+    figsize(14.5, 10)
     # histogram of the samples:
     fig = plt.figure()
     fig.subplots_adjust(bottom=0.07)
@@ -127,9 +127,6 @@ if __name__ == '__main__':
     plt.savefig(general.folderPath2 + "exp2_posterior_distributions.png")
     plt.clf()
 
-    pm.Matplot.plot(strmsM)
-    plt.clf()
-
     yp = year0 + strmsM.trace('switchpoint')[:].mean()
     em = strmsM.trace('early_mean')[:].mean()
     lm = strmsM.trace('late_mean')[:].mean()
@@ -153,4 +150,4 @@ if __name__ == '__main__':
     plt.savefig(general.folderPath2 + "exp2_rate.png")
     plt.clf()
 
-    pymc.Matplot.plot(mcmc)
+    pm.Matplot.plot(strmsM)
